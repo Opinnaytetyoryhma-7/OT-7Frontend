@@ -9,7 +9,7 @@ function Menu() {
   useEffect(() => {
     const fetchAndMergeProducts = async () => {
       try {
-        const response = await fetch('http://localhost:8000/products');
+        const response = await fetch('https://chatbot-aniya.onrender.com/products');
         const dynamicProducts = await response.json();
 
         // Merge dynamic availability into static data
