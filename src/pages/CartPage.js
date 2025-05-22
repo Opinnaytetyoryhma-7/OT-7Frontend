@@ -39,14 +39,14 @@ function CartPage() {
   return (
     <div className="cart">
       <h1>Your Shopping Cart</h1>
-      <div className="cartitems">
+      <div className="cart-container">
         {cartItems.length === 0 ? (
           <p>Your cart is empty.</p>
         ) : (
           cartItems.map((item, index) => (
-            <div className="cartitem" key={index}>
+            <div className="cart-item" key={index}>
               <img src={item.image} alt={item.name} />
-              <div className="itemdetails">
+              <div className="cart-item-info">
                 <h3>{item.name}</h3>
                 <p>${item.price}</p>
                 <button onClick={() => removeFromCart(item)}>Remove</button>
