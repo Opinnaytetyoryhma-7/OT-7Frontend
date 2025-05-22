@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { CartContext } from '../Help/CartContext';
-import '../styles/cart.css'; // assuming you’ll style later
+import '../styles/cart.css'; 
 
 function CartPage() {
   const { cartItems, removeFromCart, clearCart } = useContext(CartContext);
@@ -39,14 +39,14 @@ function CartPage() {
   return (
     <div className="cart">
       <h1>Your Shopping Cart</h1>
-      <div className="cartItems">
+      <div className="cartitems">
         {cartItems.length === 0 ? (
           <p>Your cart is empty.</p>
         ) : (
           cartItems.map((item, index) => (
-            <div className="cartItem" key={index}>
+            <div className="cartitem" key={index}>
               <img src={item.image} alt={item.name} />
-              <div className="itemDetails">
+              <div className="itemdetails">
                 <h3>{item.name}</h3>
                 <p>${item.price}</p>
                 <button onClick={() => removeFromCart(item)}>Remove</button>
@@ -56,7 +56,7 @@ function CartPage() {
         )}
       </div>
       {cartItems.length > 0 && (
-        <button className="checkoutButton" onClick={handleCheckout}>
+        <button className="checkoutbutton" onClick={handleCheckout}>
           Checkout
         </button>
       )}
